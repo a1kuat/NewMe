@@ -1,5 +1,5 @@
 import {styled} from '@mui/system';
-import { paperImage } from '../../Images/paper.jpg';
+import { paperImage } from '../../Images/spider.jpg';
 import { Typography } from '@mui/material';
 
 const SeriesCaption = styled(Typography)(() => ({

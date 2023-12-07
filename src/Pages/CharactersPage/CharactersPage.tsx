@@ -9,8 +9,8 @@ import SeriesContainer from "../../Components/Series/SeriesContainer";
 import SeriesCard from "../../Components/Series/SeriesCard";
 import SeriesCaption from "../../Components/Series/SeriesCaption";
 import StyledCardMedia from "../../Components/Series/StyledCardMedia";
-import { SeriesData } from "../../Components/Series/SeriesData";
 import LoadingPage from "../LoadingPage";
+import {CharactersData}  from "../../Components/Characters/CharactersData";
 
 const publicKey = "99f249b7070a2e4cc1a49513d6065289";
 const privateKey = "375757c2f7b7462e446837bceedbc801a5349ff8";
@@ -19,12 +19,12 @@ const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
 
 const SeriesPage = () => {
   const navigate = useNavigate();
-  const [series, setSeries] = useState<SeriesData[]>([]);
+  const [characters, setCharacters] = useState<CharactersData[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSeriesClick = (series: SeriesData) => {
-    navigate(`/series/${series.id}`);
+  const handleCharactersClick = (series: CharactersData) => {
+    navigate(`/characters/${series.id}`);
   };
 
   const handleSearch = (event) => {
@@ -34,31 +34,31 @@ const SeriesPage = () => {
   const handleReset = (event) => {
     event.preventDefault();
     setSearchTerm("");
-    setSeries([]);
+    setCharacters([]);
   };
 
   const handleGet = (event) => {
     event.preventDefault();
-    fetchSeries(searchTerm);
+    fetchCharacters(searchTerm);
   };
 
-  const fetchSeries = async (searchTerm = "") => {
+  const fetchCharacters = async (searchTerm = "") => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://gateway.marvel.com/v1/public/series?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&titleStartsWith=${searchTerm}`
+        `http://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&nameStartsWith=${searchTerm}`
       );
       const data = await response.json();
-      setSeries(data.data.results);
+      setCharacters(data.data.results);
     } catch (error) {
-      console.error("Error fetching series:", error);
+      console.error("Error fetching characters:", error);
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchSeries();
+    fetchCharacters();
   }, []);
 
   if (isLoading) {
@@ -71,7 +71,7 @@ const SeriesPage = () => {
         <StyledInput
           value={searchTerm}
           onChange={handleSearch}
-          placeholder="Enter series name"
+          placeholder="Enter characters name"
         />
         <div>
           <StyledButton type="submit" onClick={handleGet}>
@@ -82,17 +82,17 @@ const SeriesPage = () => {
           </StyledButton>
         </div>
       </StyledSearchForm>
-      {series.length > 0 && (
+      {characters.length > 0 && (
         <SeriesContainer>
-          {series.map((series) => (
+          {characters.map((characters) => (
             <SeriesCard
-              key={series.id}
-              onClick={() => handleSeriesClick(series)}
+              key={characters.id}
+              onClick={() => handleCharactersClick(characters)}
             >
               <StyledCardMedia
-                image={`${series.thumbnail.path}.${series.thumbnail.extension}`}
+                image={`${characters.thumbnail.path}.${characters.thumbnail.extension}`}
               />
-              <SeriesCaption>{series.title}</SeriesCaption>
+              <SeriesCaption>{characters.name}</SeriesCaption>
             </SeriesCard>
           ))}
         </SeriesContainer>
