@@ -1,7 +1,11 @@
 import React from 'react';
+import StyledDiv from '../../Components/Home/StyledDiv';
 
 const HomePage = () => {
-    return <h1>HomePage</h1>
+    return (
+        <StyledDiv>
+        </StyledDiv>
+    );
 }
 
 export default HomePage;
