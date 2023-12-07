@@ -11,6 +11,11 @@ const SeriesCard = styled(Card)(({ theme }) => ({
     boxShadow: '4px 4px black',
     transition: '0.2s linear',
     textDecorationColor: 'black',
+    '&:hover': {
+      cursor: 'pointer',
+      boxShadow: '6px 6px black',
+      transform: 'translate(-2px, -2px)',
+    },
   }));
 
 export default SeriesCard;
