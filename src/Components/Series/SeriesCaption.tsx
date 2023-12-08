@@ -1,10 +1,11 @@
 import {styled} from '@mui/system';
-import { paperImage } from '../../Images/spider.jpg';
+import  paperImage  from '../../Images/paper.jpg';
 import { Typography } from '@mui/material';
 
 const SeriesCaption = styled(Typography)(() => ({
     fontFamily: '"Bangers", cursive',
     fontSize: '1.6em',
+    fontWeight: "bold",
     textAlign: 'center',
     margin: 'auto auto 0 auto',
     padding: '0.5em 1em',

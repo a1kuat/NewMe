@@ -4,7 +4,7 @@ import CryptoJS from "crypto-js";
 import StyledSearchForm from "../../Components/Series/StyledSearchForm";
 import StyledInput from "../../Components/Series/StyledInput";
 import StyledButton from "../../Components/Series/StyledButton";
-import StyledDiv from "../../Components/Series/StyledDiv";
+import StyledDiv from "../../Components/Characters/StyledDiv";
 import SeriesContainer from "../../Components/Series/SeriesContainer";
 import SeriesCard from "../../Components/Series/SeriesCard";
 import SeriesCaption from "../../Components/Series/SeriesCaption";
@@ -23,8 +23,8 @@ const SeriesPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleCharactersClick = (series: CharactersData) => {
-    navigate(`/characters/${series.id}`);
+  const handleCharactersClick = (characters: CharactersData) => {
+    navigate(`/characters/${characters.id}`);
   };
 
   const handleSearch = (event) => {
