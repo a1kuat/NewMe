@@ -2,7 +2,7 @@
   "name": "newme",
   "version": "1.0.0",
   "description": "",
-  "proxy": "https://static.inno-js.ru",
+  "proxy": "http://gateway.marvel.com/v1/public",
   "main": "./src/index.tsx",
   "scripts": {
     "test": "jest",
