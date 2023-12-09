@@ -2,7 +2,7 @@
   "name": "newme",
   "version": "1.0.0",
   "description": "",
-  "proxy": "https://b2.inno-js.ru",
+  "proxy": "https://static.inno-js.ru",
   "main": "./src/index.tsx",
   "scripts": {
     "test": "jest",
