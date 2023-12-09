@@ -1,6 +1,6 @@
 {
   "name": "newme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "proxy": "http://gateway.marvel.com/v1/public",
   "main": "./src/index.tsx",
