@@ -2,9 +2,9 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function(app) {
  app.use(
-   '/public',
+   '/api',
    createProxyMiddleware({
-     target: 'http://gateway.marvel.com/v1',
+     target: 'http://gateway.marvel.com/v1/public',
      changeOrigin: true,
    })
  );

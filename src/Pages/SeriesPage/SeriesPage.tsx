@@ -45,7 +45,7 @@ const SeriesPage = () => {
   const fetchSeries = async (searchTerm = '') => {
     setIsLoading(true);
     try {
-      const response = await fetch(`public/series?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&titleStartsWith=${searchTerm}`);
+      const response = await fetch(`http://gateway.marvel.com/v1/public/series?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&titleStartsWith=${searchTerm}`);
       const data = await response.json();
       setSeries(data.data.results);
     } catch (error) {

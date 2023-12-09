@@ -52,7 +52,7 @@ const GraphPage = () => {
   useEffect(() => {
     Promise.all(
       characterIds.map(id =>
-        fetch(`public/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
+        fetch(`http://gateway.marvel.com/v1/public/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
           .then(response => response.json())
           .then(data => data.data.results[0])
       )

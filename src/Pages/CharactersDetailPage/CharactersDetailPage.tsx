@@ -16,7 +16,7 @@ const CharactersDetailPage = () => {
   const [characters, setCharacters] = useState<CharactersData | null>(null);
 
   useEffect(() => {
-    fetch(`public/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
+    fetch(`http://gateway.marvel.com/v1/public/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
       .then(response => response.json())
       .then(data => setCharacters(data.data.results[0]));
   }, [id]);
