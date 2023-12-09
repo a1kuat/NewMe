@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, IconButton , Box, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import logo from '../../Images/logo.png'; 
 import {styled} from '@mui/system';
 const Logo = styled('img')({
@@ -12,11 +12,12 @@ const Logo = styled('img')({
   });
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <AppBar position='fixed' style={{ background: 'transparent', boxShadow: 'none' }}>
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <Logo src={logo} alt="Marvel logo" />
+        <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => navigate('/')}>
+          <Logo src={logo} alt="Marvel logo"/>
         </IconButton>
         <Box sx={{ marginLeft: 'auto' }}>
           <Button 
