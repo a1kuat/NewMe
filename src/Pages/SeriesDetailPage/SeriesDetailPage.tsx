@@ -16,7 +16,7 @@ const SeriesDetailPage = () => {
   const [series, setSeries] = useState<SeriesData | null>(null);
 
   useEffect(() => {
-    fetch(`api/series/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
+    fetch(`public/series/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
       .then(response => response.json())
       .then(data => setSeries(data.data.results[0]));
   }, [id]);

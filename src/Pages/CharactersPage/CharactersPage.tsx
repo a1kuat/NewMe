@@ -46,7 +46,7 @@ const SeriesPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `api/characters?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=100&nameStartsWith=${searchTerm}`
+        `public/characters?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=100&nameStartsWith=${searchTerm}`
       );
       const data = await response.json();
       setCharacters(data.data.results);
