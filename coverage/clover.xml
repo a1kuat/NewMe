@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702097171235" clover="3.2.0">
-  <project timestamp="1702097171236" name="All files">
+<coverage generated="1702103507822" clover="3.2.0">
+  <project timestamp="1702103507822" name="All files">
     <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1" elements="7" coveredelements="7" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
-    <file name="capitalizeFirstLetter.ts" path="/home/aibek/9. AJ/NewMe/helpers/capitalizeFirstLetter.ts">
+    <file name="capitalizeFirstLetter.ts" path="/home/azamat/NewMe/helpers/capitalizeFirstLetter.ts">
       <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
       <line num="2" count="3" type="stmt"/>
