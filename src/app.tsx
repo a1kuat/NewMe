@@ -10,7 +10,7 @@ import GraphPage from './Pages/GraphPage/GraphPage';
 
 const App = () => {
   return(
-    <Router basename="/newme">
+    <Router basename="/https://static.inno-js.ru/NewMe">
       <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
