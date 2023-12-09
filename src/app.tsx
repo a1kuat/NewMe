@@ -6,6 +6,7 @@ import CharactersDetailPage from './Pages/CharactersDetailPage';
 import HomePage from './Pages/HomePage';
 import CharactersPage from './Pages/CharactersPage';
 import Navbar from './Components/Navbar/Navbar';
+import GraphPage from './Pages/GraphPage/GraphPage';
 
 const App = () => {
   return(
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/series/:id" element={<SeriesDetailPage/>}/>
         <Route path="/characters" element={<CharactersPage/>}/>
         <Route path="/characters/:id" element={<CharactersDetailPage/>}/>
+        <Route path="/graph" element={<GraphPage/>}/>
       </Routes>
     </Router>
   )
