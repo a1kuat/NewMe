@@ -1,5 +1,5 @@
 import {styled} from '@mui/system';
-import characterImage from './Images/sp.jpeg';
+import characterImage from '../../Images/sp.jpeg';
 
 const StyledDiv = styled('div')({
     backgroundImage: `url(${characterImage})`,
