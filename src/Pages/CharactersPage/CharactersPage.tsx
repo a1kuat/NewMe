@@ -19,7 +19,7 @@ const baseUrl = getConfigValue("NewMe.apiBaseUrl");
 const ts = new Date().getTime().toString();
 const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
 
-const SeriesPage = () => {
+const CharactersPage = () => {
   const navigate = useNavigate();
   const [characters, setCharacters] = useState<CharactersData[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,6 +50,7 @@ const SeriesPage = () => {
       const response = await fetch(
         `${baseUrl}/characters?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=100&nameStartsWith=${searchTerm}`
       );
+      console.log(`${baseUrl}/characters?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=100&nameStartsWith=${searchTerm}`);
       const data = await response.json();
       setCharacters(data.data.results);
     } catch (error) {
@@ -103,4 +104,4 @@ const SeriesPage = () => {
   );
 };
 
-export default SeriesPage;
+export default CharactersPage;
