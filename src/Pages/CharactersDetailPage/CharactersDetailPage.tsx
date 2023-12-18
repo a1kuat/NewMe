@@ -6,8 +6,11 @@ import SeriesCard from '../../Components/SeriesDetail/SeriesCard';
 import { CharactersData } from '../../Components/Characters/CharactersData';
 import LoadingPage from '../LoadingPage';
 import StyledDiv from '../../Components/CharactersDetail/StyledDiv';
-const publicKey = '99f249b7070a2e4cc1a49513d6065289';
-const privateKey = '375757c2f7b7462e446837bceedbc801a5349ff8';
+import { getConfigValue } from '@ijl/cli';
+
+const publicKey = getConfigValue("NewMe.apiPublicKey");
+const privateKey =  getConfigValue("NewMe.apiPrivateKey");
+const baseUrl = getConfigValue("NewMe.apiBaseUrl");
 const ts = new Date().getTime().toString();
 const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
 
@@ -16,7 +19,7 @@ const CharactersDetailPage = () => {
   const [characters, setCharacters] = useState<CharactersData | null>(null);
 
   useEffect(() => {
-    fetch(`http://gateway.marvel.com/v1/public/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
+    fetch(`${baseUrl}/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
       .then(response => response.json())
       .then(data => setCharacters(data.data.results[0]));
   }, [id]);

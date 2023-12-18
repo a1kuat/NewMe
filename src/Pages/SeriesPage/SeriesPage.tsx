@@ -11,9 +11,11 @@ import SeriesCaption from '../../Components/Series/SeriesCaption';
 import StyledCardMedia from '../../Components/Series/StyledCardMedia';
 import { SeriesData } from '../../Components/Series/SeriesData';
 import LoadingPage from '../LoadingPage';
+import { getConfigValue } from '@ijl/cli';
 
-const publicKey = '99f249b7070a2e4cc1a49513d6065289';
-const privateKey = '375757c2f7b7462e446837bceedbc801a5349ff8';
+const publicKey = getConfigValue("NewMe.apiPublicKey");
+const privateKey =  getConfigValue("NewMe.apiPrivateKey");
+const baseUrl = getConfigValue("NewMe.apiBaseUrl");
 const ts = new Date().getTime().toString();
 const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
 
@@ -45,7 +47,7 @@ const SeriesPage = () => {
   const fetchSeries = async (searchTerm = '') => {
     setIsLoading(true);
     try {
-      const response = await fetch(`http://gateway.marvel.com/v1/public/series?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&titleStartsWith=${searchTerm}`);
+      const response = await fetch(`${baseUrl}/series?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&titleStartsWith=${searchTerm}`);
       const data = await response.json();
       setSeries(data.data.results);
     } catch (error) {

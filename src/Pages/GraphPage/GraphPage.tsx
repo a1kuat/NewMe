@@ -5,12 +5,13 @@ import CryptoJS from 'crypto-js';
 import StyledDiv from '../../Components/Graph/StyledDiv';
 import { StyledDiv1 } from '../../Components/Graph/StyledDiv1';
 import { StyledDiv2 } from '../../Components/Graph/StyledDiv2';
+import { getConfigValue } from '@ijl/cli';
 
-const publicKey = '99f249b7070a2e4cc1a49513d6065289';
-const privateKey = '375757c2f7b7462e446837bceedbc801a5349ff8';
+const publicKey = getConfigValue("NewMe.apiPublicKey");
+const privateKey =  getConfigValue("NewMe.apiPrivateKey");
+const baseUrl = getConfigValue("NewMe.apiBaseUrl");
 const ts = new Date().getTime().toString();
 const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
-
 
 const CharacterNode = ({ data , characterColors}) => {
   console.log(data.id);
@@ -52,7 +53,7 @@ const GraphPage = () => {
   useEffect(() => {
     Promise.all(
       characterIds.map(id =>
-        fetch(`http://gateway.marvel.com/v1/public/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
+        fetch(`${baseUrl}/characters/${id}?apikey=${publicKey}&ts=${ts}&hash=${hash}`)
           .then(response => response.json())
           .then(data => data.data.results[0])
       )
