@@ -15,9 +15,9 @@ const App = () => {
     <div className="container main-content">
       <Router basename="/NewMe">
         <Navbar />
-        <a href="https://ibb.co/sJhJhnC">
+        {/* <a href="https://ibb.co/sJhJhnC">
           <img src="https://i.ibb.co/LhMhMmr/logo.png" alt="logo" />
-        </a>
+        </a> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/series" element={<SeriesPage />} />

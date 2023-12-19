@@ -18,9 +18,9 @@ const Navbar = () => {
       position="fixed"
       style={{ background: "transparent", boxShadow: "none" }}
     >
-      <a href="https://ibb.co/sJhJhnC">
+      {/* <a href="https://ibb.co/sJhJhnC">
         <img src="https://i.ibb.co/LhMhMmr/logo.png" alt="logo" />
-      </a>
+      </a> */}
       <Toolbar>
         <IconButton
           edge="start"
@@ -28,7 +28,7 @@ const Navbar = () => {
           aria-label="menu"
           onClick={() => navigate("/")}
         >
-          <Logo src="" alt="Marvel logo" />
+          <Logo src="https://i.ibb.co/LhMhMmr/logo.png" alt="Marvel logo" />
         </IconButton>
         <Box sx={{ marginLeft: "auto" }}>
           <Button

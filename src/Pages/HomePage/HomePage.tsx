@@ -1,40 +1,64 @@
-import React from 'react';
-import { CardContent, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import img1 from '../../Images/thor.jpg';
-import img2 from '../../Images/407066.jpg';
-import img3 from '../../Images/vnm.jpg';
-import StyledDiv from '../../Components/Home/StyledDiv';
-import StyledCard from '../../Components/Home/StyledCard';
-import StyledCard2 from '../../Components/Home/StyledCard2';
-import StyledButton from '../../Components/Home/StyledButton';
+import React from "react";
+import { CardContent, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import img1 from "../../Images/thor.jpg";
+import img2 from "../../Images/407066.jpg";
+import img3 from "../../Images/vnm.jpg";
+import StyledDiv from "../../Components/Home/StyledDiv";
+import StyledCard from "../../Components/Home/StyledCard";
+import StyledCard2 from "../../Components/Home/StyledCard2";
+import StyledButton from "../../Components/Home/StyledButton";
 
-const Section = ({ bgImage, cardComponent: CardComponent, title, description, buttonText, buttonClickPath }) => {
+const Section = ({
+  bgImage,
+  cardComponent: CardComponent,
+  title,
+  description,
+  buttonText,
+  buttonClickPath,
+}) => {
+  console.log(46);
   const navigate = useNavigate();
 
   return (
     <StyledDiv bgImage={bgImage}>
       <CardComponent>
         <CardContent>
-          <Typography variant="h2" component="div" align="center" sx={{ color: 'white', fontFamily: 'Bangers, cursive', fontWeight: 'bold' }}>
+          <Typography
+            variant="h2"
+            component="div"
+            align="center"
+            sx={{
+              color: "white",
+              fontFamily: "Bangers, cursive",
+              fontWeight: "bold",
+            }}
+          >
             {title}
           </Typography>
-          <Typography variant="h4" component="div" sx={{ color: 'white', fontFamily: 'Bangers, cursive' }}>
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{ color: "white", fontFamily: "Bangers, cursive" }}
+          >
             {description}
           </Typography>
-          <StyledButton variant="contained" onClick={() => navigate(buttonClickPath)}>
+          <StyledButton
+            variant="contained"
+            onClick={() => navigate(buttonClickPath)}
+          >
             {buttonText}
           </StyledButton>
         </CardContent>
       </CardComponent>
     </StyledDiv>
   );
-}
+};
 
 const HomePage = () => {
   return (
     <div>
-      <Section 
+      <Section
         bgImage={img1}
         cardComponent={StyledCard}
         title="Explore Characters with Marvel"
@@ -42,7 +66,7 @@ const HomePage = () => {
         buttonText="Explore characters"
         buttonClickPath="/characters"
       />
-      <Section 
+      <Section
         bgImage={img2}
         cardComponent={StyledCard2}
         title="Read interesting stories with us"
@@ -50,7 +74,7 @@ const HomePage = () => {
         buttonText="Explore series"
         buttonClickPath="/series"
       />
-      <Section 
+      <Section
         bgImage={img3}
         cardComponent={StyledCard}
         title="Interconnection between series and characters"
@@ -60,6 +84,6 @@ const HomePage = () => {
       />
     </div>
   );
-}
+};
 
 export default HomePage;
