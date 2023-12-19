@@ -4,7 +4,7 @@ module.exports = function(app) {
  app.use(
    '/api',
    createProxyMiddleware({
-     target: 'http://gateway.marvel.com/v1/public',
+     target: 'https://gateway.marvel.com/v1/public',
      changeOrigin: true,
    })
  );

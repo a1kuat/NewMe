@@ -48,6 +48,7 @@ const SeriesPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(`${baseUrl}/series?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&titleStartsWith=${searchTerm}`);
+      console.log(`${baseUrl}/series?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=20&titleStartsWith=${searchTerm}`);
       const data = await response.json();
       setSeries(data.data.results);
     } catch (error) {

@@ -18,7 +18,7 @@ module.exports = {
   config: {
     "NewMe.apiBaseUrl": "https://gateway.marvel.com/v1/public/",
     //"NewMe.apiBaseUrl": "/api/public",
-    "NewMe.apiPublicKey": "99f249b7070a2e4cc1a49513d6065289",
-    "NewMe.apiPrivateKey": "375757c2f7b7462e446837bceedbc801a5349ff8"
+    "NewMe.apiPublicKey": "0ac8d7f75061bb01ebb6d09606f79aa4",
+    "NewMe.apiPrivateKey": "47e7f668f6f584e3d14e87d413cdf7dec79ea50e"
   }
 }
