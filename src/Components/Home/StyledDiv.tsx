@@ -5,7 +5,8 @@ interface StyledDivProps {
 }
 
 const StyledDiv = styled('div')<StyledDivProps>(({ bgImage }) => ({
-  backgroundImage: `url(${bgImage})`,
+  //backgroundImage: `url(${bgImage})`,
+  backgroundColor: 'black',
   height: '100vh',
   backgroundSize: 'cover',
   display: 'flex',

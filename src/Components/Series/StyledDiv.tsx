@@ -2,7 +2,8 @@ import {styled} from '@mui/system';
 import seriesImage from '../../Images/spiderman.jpg';
 
 const StyledDiv = styled('div')({
-    backgroundImage: `url(${seriesImage})`,
+    //backgroundImage: `url(${seriesImage})`,
+    backgroundColor: 'black',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',

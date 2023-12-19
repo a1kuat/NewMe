@@ -4,7 +4,8 @@ import paperImage from '../../Images/paper.jpg';
 
 const SeriesCard = styled(Card)(({ theme }) => ({
     border: '2px solid rgb(161, 161, 161)',
-    backgroundImage: `url(${paperImage})`,
+    //backgroundImage: `url(${paperImage})`,
+    backgroundColor: 'white',
     position: 'absolute',
     boxSizing: 'content-box',
     top: '10%',

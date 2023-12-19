@@ -2,7 +2,8 @@ import {styled} from '@mui/system';
 import characterImage from '../../Images/sp.jpeg';
 
 const StyledDiv = styled('div')({
-    backgroundImage: `url(${characterImage})`,
+    //backgroundImage: `url(${characterImage})`,
+    backgroundColor: 'black',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',

@@ -10,7 +10,7 @@ const SeriesCaption = styled(Typography)(() => ({
     margin: 'auto auto 0 auto',
     padding: '0.5em 1em',
     backgroundColor: 'white',
-    backgroundImage: `url(${paperImage})`,
+    //backgroundImage: `url(${paperImage})`,
     color: 'black',
     border: '1px solid black',
     boxShadow: '2px 2px black',

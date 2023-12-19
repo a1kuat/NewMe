@@ -9,8 +9,8 @@ const SeriesContainer = styled(Box)(({ theme }) => ({
     gridTemplateColumns: 'repeat(5, 1fr)',
     gridGap: '10px',
     padding: '1em',
-    backgroundColor: 'white',
-    backgroundImage: `url(${paperImage})`,
+    backgroundColor: 'red',
+    //backgroundImage: `url(${paperImage})`,
   }));
 
 export default SeriesContainer;
