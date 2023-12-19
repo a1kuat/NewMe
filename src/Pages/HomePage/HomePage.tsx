@@ -22,6 +22,7 @@ const Section = ({
 
   return (
     <StyledDiv bgImage={bgImage}>
+      {/* <a href="https://ibb.co/0swYsy0"><img src="https://i.ibb.co/41Q41Rb/vnm.jpg" alt="vnm" border="0" /></a> */}
       <CardComponent>
         <CardContent>
           <Typography
@@ -59,7 +60,8 @@ const HomePage = () => {
   return (
     <div>
       <Section
-        bgImage={img1}
+        bgImage="https://i.postimg.cc/jd9NH2Bc/thor.jpg"
+        // <a href="https://ibb.co/v4ZHJt7"><img src="https://i.ibb.co/B2qtg1X/thor.jpg" alt="thor" border="0" /></a>
         cardComponent={StyledCard}
         title="Explore Characters with Marvel"
         description="Learn about your favorite Marvel characters, super heroes, and villains! Discover their powers, weaknesses, abilities,and more... From the Sentry's incredible strength and telepathic powers, to the intricate power dynamics between main and supporting characters, the Marvel Universe is filled with complex and compelling characters."
@@ -67,7 +69,7 @@ const HomePage = () => {
         buttonClickPath="/characters"
       />
       <Section
-        bgImage={img2}
+        bgImage="https://i.postimg.cc/YSSHt2Cc/407066.jpg"
         cardComponent={StyledCard2}
         title="Read interesting stories with us"
         description="Dive into the captivating world of Marvel comics! Explore the original tales of your favorite Marvel characters, super heroes, and villains. Discover the intricate plots, character developments, thrilling action sequences, and more that have captivated comic book fans for decades."
@@ -75,7 +77,7 @@ const HomePage = () => {
         buttonClickPath="/series"
       />
       <Section
-        bgImage={img3}
+        bgImage="https://i.postimg.cc/DZ844K5H/vnm.jpg"
         cardComponent={StyledCard}
         title="Interconnection between series and characters"
         description="Explore the intricate web of interconnections between Marvel series and characters. From the Avengers to the X-Men, the Guardians of the Galaxy, and beyond, each series offers a unique perspective on the Marvel Universe. Learn about the relationships between characters, their shared stories, and how they influence each other."
