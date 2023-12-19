@@ -7,8 +7,8 @@ import HomePage from "./Pages/HomePage";
 import CharactersPage from "./Pages/CharactersPage";
 import Navbar from "./Components/Navbar/Navbar";
 import GraphPage from "./Pages/GraphPage/GraphPage";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+//import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const App = () => {
   return (

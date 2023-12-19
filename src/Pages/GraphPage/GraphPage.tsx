@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import ReactFlow , {Node , Edge , Handle , Position, Background}from 'react-flow-renderer';
+import ReactFlow , {Node , Edge , Handle , Position}from 'react-flow-renderer';
 import { CharactersData } from '../../Components/Characters/CharactersData';
 import CryptoJS from 'crypto-js';
 import StyledDiv from '../../Components/Graph/StyledDiv';
 import { StyledDiv1 } from '../../Components/Graph/StyledDiv1';
 import { StyledDiv2 } from '../../Components/Graph/StyledDiv2';
 import { getConfigValue } from '@ijl/cli';
+import { useNavigate } from "react-router-dom";
 
 const publicKey = getConfigValue("NewMe.apiPublicKey");
 const privateKey =  getConfigValue("NewMe.apiPrivateKey");
@@ -46,6 +47,7 @@ const GraphPage = () => {
     character: (props) => <CharacterNode {...props} characterColors={characterColors} />,
     series: SeriesNode,
   };
+  const navigate = useNavigate();
   const characterIds = [1009610, 1009368 , 1009187 , 1009165 , 1009268 , 1017575, 1009378, 1010801 , 1010338 , 1011299 , 1009718 , 1009215];
   const [characters, setCharacters] = useState<CharactersData[]>([]);
   const colorPalette = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'cyan', 'brown', 'magenta', 'teal', 'lime'];
@@ -129,9 +131,9 @@ const GraphPage = () => {
               onNodeClick={(event, element) => {
                 if (element.id.startsWith('series')) {
                   const seriesId = element.data.uri.split('/').pop();
-                  window.location.href = '/newme/series/' + seriesId;
+                  navigate(`/series/${seriesId}`);
                 } else  {
-                  window.location.href = '/newme/characters/' + element.id;
+                  navigate(`/characters/${element.id}`);
                 }
               }}
               nodes={nodes}
