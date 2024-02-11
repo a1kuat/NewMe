@@ -72,7 +72,7 @@ npm run build
 npm run start
 ```
 
-The app will be available at [http://localhost:3000](http://localhost:3000).
+The app will be available at [http://localhost:8099/newme](http://localhost:8099/newme).
 
 ## Contributing
 
